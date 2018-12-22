@@ -50,10 +50,12 @@ Ubuntu: kafkacat installation
 
 
 Run the following command to list all available brokers in the cluster:
-1	kafkacat -L -b kafka-1:19092
- As you can see all of three nodes are accessible:
+kafkacat -L -b kafka-1:19092
+As you can see all of three nodes are accessible:
+
 The result of command: kafkacat -L -b kafka-1:19092
-better-coding@bc-vbox:~$ kafkacat -L -b kafka-1:19092
+>:~$ kafkacat -L -b kafka-1:19092
+
 Metadata for all topics (from broker 1: kafka-1:19092/1):
  3 brokers:
   broker 2 at kafka-2:29092
@@ -61,20 +63,22 @@ Metadata for all topics (from broker 1: kafka-1:19092/1):
   broker 3 at kafka-3:39092
  2 topics:
   topic "__confluent.support.metrics" with 1 partitions:
-    partition 0, leader 2, replicas: 2,3,1, isrs: 2,3,1
-  topic "helloworld.t" with 1 partitions:
-    partition 0, leader 1, replicas: 1, isrs: 1
- Open two instances of terminal and run:
+partition 0, leader 2, replicas: 2,3,1, isrs: 2,3,1
+topic "helloworld.t" with 1 partitions:
+partition 0, leader 1, replicas: 1, isrs: 1
+Open two instances of terminal and run:
+
 Terminal #2: kafkacat in Producer mode
-1	kafkacat -P -b kafka-1:19092 -t helloworld_topic
+
+kafkacat -P -b kafka-1:19092 -t helloworld_topic
  Terminal #2: kafkacat in Consumer mode
 Shell
-1	kafkacat -C -b kafka-3:39092 -t helloworld_topic
- Then write some message to the first terminal, and you should see the same message in the second terminal.
+kafkacat -C -b kafka-3:39092 -t helloworld_topic
+Then write some message to the first terminal, and you should see the same message in the second terminal.
 Terminal #2: kafka Consumer output
 
 
-	>kafkacat -C -b kafka-3:39092 -t helloworld_topic
+>kafkacat -C -b kafka-3:39092 -t helloworld_topic
 % Reached end of topic helloworld_topic [0] at offset 0
  
 test_message

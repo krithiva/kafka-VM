@@ -57,21 +57,23 @@ The result of command: kafkacat -L -b kafka-1:19092
 >:~$ kafkacat -L -b kafka-1:19092
 
 Metadata for all topics (from broker 1: kafka-1:19092/1):
- 3 brokers:
-  broker 2 at kafka-2:29092
-  broker 1 at kafka-1:19092
-  broker 3 at kafka-3:39092
- 2 topics:
-  topic "__confluent.support.metrics" with 1 partitions:
+
+3 brokers:
+broker 2 at kafka-2:29092
+broker 1 at kafka-1:19092
+broker 3 at kafka-3:39092
+2 topics:
+topic "__confluent.support.metrics" with 1 partitions:
 partition 0, leader 2, replicas: 2,3,1, isrs: 2,3,1
 topic "helloworld.t" with 1 partitions:
 partition 0, leader 1, replicas: 1, isrs: 1
+
 Open two instances of terminal and run:
 
 Terminal #2: kafkacat in Producer mode
 
 kafkacat -P -b kafka-1:19092 -t helloworld_topic
- Terminal #2: kafkacat in Consumer mode
+Terminal #2: kafkacat in Consumer mode
 Shell
 kafkacat -C -b kafka-3:39092 -t helloworld_topic
 Then write some message to the first terminal, and you should see the same message in the second terminal.

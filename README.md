@@ -32,13 +32,8 @@ In this step I will show you how to use kafkacat tool to test previously created
  
 Please remember to add kafka-1, kafka-2 and kafka-3 hosts to the client /etc/hosts file.
 /et/hosts file:
-1
-2
-3
-4
-5
-6
-7	127.0.0.1	localhost
+
+	127.0.0.1	localhost
  
  
 192.168.1.231 kafka-1 kafka-2 kafka-3
@@ -58,17 +53,7 @@ Run the following command to list all available brokers in the cluster:
 1	kafkacat -L -b kafka-1:19092
  As you can see all of three nodes are accessible:
 The result of command: kafkacat -L -b kafka-1:19092
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11	better-coding@bc-vbox:~$ kafkacat -L -b kafka-1:19092
+better-coding@bc-vbox:~$ kafkacat -L -b kafka-1:19092
 Metadata for all topics (from broker 1: kafka-1:19092/1):
  3 brokers:
   broker 2 at kafka-2:29092

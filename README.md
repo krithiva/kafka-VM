@@ -1,5 +1,5 @@
-Building Apache Kafka cluster using docker-compose and VirtualBox
- 
+Building Apache Kafka cluster using docker-compose in Ubuntu(Virtualbox):
+
 Apache Kafka is a an open-source stream-processing software platform, designed for high-throughput, low-latency and real-time data broadcasting. It’s provided by an easy-scalable and high-availability environment. Let’s see how to configure your own docker-compose recipe with fully functional Apache Kafka clustered environment just in few minutes.
 Overview
 •	Preparing host machine for clustered environment using VirtualBox, docker and docker-compose.
